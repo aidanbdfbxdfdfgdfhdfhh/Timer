@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Timer Studio</title>
+  <style>
+    :root {
+      --green-900: #0b2f14;
+      --green-800: #13421e;
+      --green-700: #1c5c2a;
+      --green-500: #2e8b3f;
+      --green-400: #46a85c;
+      --green-200: #b7e2c1;
+      --glass: rgba(10, 25, 14, 0.6);
+      --glow: rgba(78, 196, 104, 0.35);
+      --text: #e7ffe9;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Trebuchet MS", "Gill Sans", "Candara", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        linear-gradient(180deg, rgba(8, 18, 10, 0.65), rgba(8, 18, 10, 0.85)),
+        url("bg.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: grid;
+      place-items: center;
+      padding: 48px 20px;
+    }
+
+    .frame {
+      width: min(920px, 100%);
+      border: 1px solid rgba(78, 196, 104, 0.4);
+      background: radial-gradient(120% 120% at 0% 0%, rgba(46, 139, 63, 0.28), rgba(10, 25, 14, 0.72));
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 40px var(--glow);
+      backdrop-filter: blur(6px);
+      border-radius: 24px;
+      padding: 48px 40px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 12px;
+      color: var(--green-200);
+      margin: 0 0 10px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 6vw, 56px);
+      margin: 0 0 16px;
+      color: #f1fff2;
+    }
+
+    p {
+      font-size: clamp(16px, 2.4vw, 20px);
+      margin: 0 0 24px;
+      line-height: 1.6;
+      color: #dbffe0;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 28px 0 24px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, var(--green-700), var(--green-500));
+      color: #f5fff6;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      border-radius: 14px;
+      border: 1px solid rgba(78, 196, 104, 0.5);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 30px rgba(0, 0, 0, 0.4);
+      filter: brightness(1.08);
+    }
+
+    .button:active {
+      transform: translateY(0);
+    }
+
+    .note {
+      background: var(--glass);
+      border-radius: 16px;
+      padding: 18px 20px;
+      border: 1px solid rgba(78, 196, 104, 0.35);
+    }
+
+    .note strong {
+      color: #f0fff2;
+    }
+
+    .footer {
+      margin-top: 22px;
+      font-size: 14px;
+      color: #bfe8c7;
+    }
+
+    .spark {
+      position: relative;
+      display: inline-block;
+    }
+
+    .spark::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--green-400), transparent);
+      opacity: 0.8;
+    }
+
+    @media (max-width: 640px) {
+      .frame {
+        padding: 36px 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="frame">
+    <div class="eyebrow">Timer Studio</div>
+    <h1><span class="spark">Green, focused, and fast.</span></h1>
+    <p>Download the latest builds of Timer Studio. Everything here stays in the green lane for a clean, focused experience.</p>
+
+    <div class="actions">
+      <a class="button" href="Timer_Studio-x86_64.AppImage" download>
+        Download AppImage
+      </a>
+      <a class="button" href="timer-studio_1.0.0_all.deb" download>
+        Download .deb
+      </a>
+    </div>
+
+    <div class="note">
+      <p><strong>Coming soon:</strong> an Android APK (no Play Store) and a Windows .exe build.</p>
+    </div>
+
+    <div class="footer">Need another format? Let us know what you want next.</div>
+  </main>
+</body>
+</html>
